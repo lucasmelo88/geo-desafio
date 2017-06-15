@@ -2,6 +2,7 @@ describe("Geofusion Add Product Functionality",function() {
 
   var home_page = require('../pages/HomePage.js');
   var add_product = require('../pages/AddProductPage.js');
+  var ec = protractor.ExpectedConditions;
 
   beforeEach(function() {
     //Opening the url
@@ -15,7 +16,7 @@ describe("Geofusion Add Product Functionality",function() {
 
   afterEach(function() {
 		browser.sleep(3000);
-    browser.close();
+    //browser.close();
 	});
 
   it("Add new product with success", function() {
@@ -26,6 +27,40 @@ describe("Geofusion Add Product Functionality",function() {
     browser.sleep(3000);
     add_product.buttonSaveClick();
     browser.sleep(3000);
+    add_product.alertNewProductHandle();
+    expect(add_product.getMessageAlert()).toEqual("Produto adicionado com sucesso!");
+  });
+
+  it("Try to add new product without fill the name", function() {
+    home_page.buttonAddProductClick();
+    add_product.setName('');
+    add_product.setPrice('1000');
+    add_product.setExpirationDate();
+    browser.sleep(3000);
+    add_product.buttonSaveClick();
+
+    browser.wait(ec.not(ec.alertIsPresent(), 3000))
+    expect(add_product.getMessageRequiredName()).toEqual("Nome é obrigatório.");
+  });
+
+  it("Try to add new product without fill the price", function() {
+    home_page.buttonAddProductClick();
+    add_product.setName('Açucar');
+    add_product.setPrice('');
+    add_product.setExpirationDate();
+    browser.sleep(3000);
+    add_product.buttonSaveClick();
+
+    browser.wait(ec.not(ec.alertIsPresent(), 3000))
+    expect(add_product.getMessageRequiredPrice()).toEqual("Preço é obrigatório.");
+  });
+
+  it("Try to add new product without fill the expiration date", function() {
+    home_page.buttonAddProductClick();
+    add_product.setName('Açucar');
+    add_product.setPrice('1000');
+    add_product.buttonSaveClick();
+    
     add_product.alertNewProductHandle();
     expect(add_product.getMessageAlert()).toEqual("Produto adicionado com sucesso!");
   });
