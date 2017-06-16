@@ -1,6 +1,3 @@
-
-var SelectWrapper = require('../util/select-wrapper');
-
 var HomePage = function(){
 
   var buttonAddProduct = element(by.linkText("Novo Produto"));
