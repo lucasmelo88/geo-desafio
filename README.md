@@ -15,5 +15,5 @@ http://www.protractortest.org/#/tutorial
 
 Into /conf directory run the following command:
 ```
-protractor conf.js
+protractor conf.js --suite all
 ```
