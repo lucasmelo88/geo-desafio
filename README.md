@@ -13,7 +13,7 @@ http://www.protractortest.org/#/tutorial
 
 ## Running the tests
 
-In /conf directory run
+Into /conf directory run
 ```
 protractor conf.js
 ```
