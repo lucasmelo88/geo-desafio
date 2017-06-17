@@ -3,13 +3,14 @@ describe("Geofusion Products List Products Functionality",function() {
   var home_page = require('../pages/HomePage.js');
   var list_products_page = require('../pages/ListProductsPage.js');
   var search_product_page = require('../pages/SearchProductPage.js');
+  var base_data = require("../json/BaseData.json");
 
   beforeEach(function() {
     //Opening the url
-    browser.get("http://desafio.geofusion.tech/");
+    browser.get(base_data.baseUrl);
     browser.manage().window().maximize();
     //Login
-    home_page.setName('Lucas Santana Melo');
+    home_page.setName(base_data.loginName);
     home_page.buttonOkClick();
     browser.sleep(3000);
   });

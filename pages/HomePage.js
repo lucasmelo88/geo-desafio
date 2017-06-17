@@ -1,7 +1,5 @@
 var HomePage = function(){
 
-  var buttonAddProduct = element(by.linkText("Novo Produto"));
-
   this.setName = function(name){
     element(by.id('owner')).sendKeys(name);
   }
@@ -9,10 +7,5 @@ var HomePage = function(){
   this.buttonOkClick = function(){
     element(by.xpath("//button[@ng-click='setOwner(ownerName)']")).click();
   }
-
-  this.buttonAddProductClick = function(){
-    buttonAddProduct.click();
-  }
-
 };
 module.exports = new HomePage();

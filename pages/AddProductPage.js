@@ -5,6 +5,7 @@ var AddProductPage = function(){
   var expirationDatePicker = element(by.id("campo3"));
   var buttonSave = element(by.buttonText("Salvar"));
   var buttonCancel = element(by.linkText("Cancelar"));
+  var buttonAddProduct = element(by.linkText("Novo Produto"));
   var buttonPreviousMonthYear = element(by.xpath("/html/body/div[3]/div[1]/table/thead/tr[2]/th[1]"));
   var dateElement = element(by.xpath("/html/body/div[3]/div[1]/table/tbody/tr[5]/td[6]"));
   var invalidDateElement = element(by.xpath("/html/body/div[3]/div[1]/table/tbody/tr[5]/td[4]"));
@@ -40,6 +41,10 @@ var AddProductPage = function(){
 
   this.buttonSaveClick = function(){
     buttonSave.click();
+  }
+
+  this.buttonAddProductClick = function(){
+    buttonAddProduct.click();
   }
 
   this.alertProductHandle = function(){

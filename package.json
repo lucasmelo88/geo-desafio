@@ -1,11 +1,10 @@
 {
-  "name": "ProtractorTests",
+  "name": "Geofusion Website Testing Automation",
   "version": "1.0.0",
   "description": "",
-  "main": "protractor.conf.js",
+  "main": "conf.js",
   "devDependencies": {
     "jasmine-spec-reporter": "^4.1.0",
-    "protractor-cucumber-framework": "^3.1.0",
     "selenium-webdriver": "3.0.1",
     "source-map-support": "~0.4.0",
     "webdriver-js-extender": "^1.0.0",

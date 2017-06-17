@@ -2,13 +2,14 @@ describe("Geofusion Add Product Functionality",function() {
 
   var home_page = require('../pages/HomePage.js');
   var add_product = require('../pages/AddProductPage.js');
+  var base_data = require("../json/BaseData.json");
 
   beforeEach(function() {
     //Opening the url
-    browser.get("http://desafio.geofusion.tech/");
+    browser.get(base_data.baseUrl);
     browser.manage().window().maximize();
     //Login
-    home_page.setName('Lucas Santana Melo');
+    home_page.setName(base_data.loginName);
     home_page.buttonOkClick();
     browser.sleep(3000);
   });
@@ -18,7 +19,7 @@ describe("Geofusion Add Product Functionality",function() {
 	});
 
   it("Try to add new product without fill the name", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('');
     add_product.setPrice('1000');
     add_product.setExpirationDate();
@@ -31,7 +32,7 @@ describe("Geofusion Add Product Functionality",function() {
   });
 
   it("Try to add new product without fill the price", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('Açucar');
     add_product.setPrice('');
     add_product.setExpirationDate();
@@ -44,7 +45,7 @@ describe("Geofusion Add Product Functionality",function() {
   });
 
   it("Try to add new product without fill the expiration date", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('Açucar');
     add_product.setPrice('1000');
     add_product.buttonSaveClick();
@@ -54,7 +55,7 @@ describe("Geofusion Add Product Functionality",function() {
   });
 
   it("Try to add new product with invalid expiration date", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('Açucar');
     add_product.setPrice('1000');
     add_product.setInvalidExpirationDate();
@@ -70,7 +71,7 @@ describe("Geofusion Add Product Functionality",function() {
   });
 
   it("Try to add new product typing a name with more than 50 characters", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('CarneFeijãoLimpezaAçucarLegumesVerdurasBolachasPastaDeDente');
     add_product.setPrice('1000');
     add_product.setExpirationDate();
@@ -86,7 +87,7 @@ describe("Geofusion Add Product Functionality",function() {
   });
 
   it("Add new product with success", function() {
-    home_page.buttonAddProductClick();
+    add_product.buttonAddProductClick();
     add_product.setName('Arroz');
     add_product.setPrice('1000');
     add_product.setExpirationDate();
