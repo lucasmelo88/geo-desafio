@@ -11,6 +11,11 @@ These instructions will get you a copy of the project up and running on your loc
 Fallow the tutorial to install and configure Protractor:
 http://www.protractortest.org/#/tutorial
 
+Run the following commando to install the dependencies in the local node_modules folder:
+```
+npm install
+```
+
 ## Running the tests
 
 Into /conf directory run the following command:
