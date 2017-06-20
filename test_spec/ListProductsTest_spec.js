@@ -18,16 +18,20 @@ describe("Geofusion Products List Products Functionality",function() {
 		browser.sleep(2000);
 	});
 
-  it("Find product existent on list", function() {
-    expect(list_products_page.getProductNameFromTable()).toBe("Açucar");
+  it("Get columns", function() {
+    expect(list_products_page.getValueFromTable("Nome", "Açucar mascavo")).toEqual("Açucar mascavo");
   });
 
-  it("Validate if product id is displayed on the list", function() {
-    expect(list_products_page.getProductIdFromTable()).not.toBeNull();
-  });
+  // it("Find product existent on list", function() {
+  //   expect(list_products_page.getProductNameFromTable()).toBe("Açucar");
+  // });
 
-  it("Validate product price format", function() {
-    expect(list_products_page.getProductPriceFromTable()).toEqual("R$ 10.00");
-  });
+  // it("Validate if product id is displayed on the list", function() {
+  //   expect(list_products_page.getProductIdFromTable()).not.toBeNull();
+  // });
+
+  // it("Validate product price format", function() {
+  //   expect(list_products_page.getProductPriceFromTable()).toEqual("R$ 10.00");
+  // });
 
 });
