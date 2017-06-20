@@ -2,7 +2,7 @@
 exports.config = {
   framework: 'jasmine',
   //seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['../test_spec/AddProductTest_spec.js'],
+  specs: ['../test_spec/ListProductsTest_spec.js'],
   directConnect: true,
   suites:{
     all: ['../test_spec/HomeLoginTest_spec.js','../test_spec/AddProductTest_spec.js',
