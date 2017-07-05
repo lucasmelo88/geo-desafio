@@ -19,7 +19,7 @@ describe("Geofusion Products List Products Functionality",function() {
 	});
 
   it("Get columns", function() {
-    expect(list_products_page.getValueFromTable("Nome", "Açucar mascavo")).toEqual("Açucar mascavo");
+    expect(list_products_page.getValueFromColumn("Nome")).toContain("Açucar mascavo");
   });
 
   // it("Find product existent on list", function() {
